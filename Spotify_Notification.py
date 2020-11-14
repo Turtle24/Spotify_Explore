@@ -9,8 +9,8 @@ import json
 spotifyData = None
 
 # Spotify Credentials and Secret
-cid = 'aec03c29f23941faa1e64b1658f71487'
-secret = '7a29feac37134721843fbc087ab605fe'
+cid = 'CLIENT_ID_GOES_HERE'
+secret = 'CLIENT_SECRET_GOES_HERE'
 
 client_credentials_manager = SpotifyClientCredentials(client_id=cid, client_secret=secret)
 sp = spotipy.Spotify(client_credentials_manager
