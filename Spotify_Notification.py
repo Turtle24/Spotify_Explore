@@ -14,7 +14,7 @@ sp = spotipy.Spotify(client_credentials_manager
                      =
                      client_credentials_manager)
 
-# Your favourite artists
+# Your favourite artists 
 top_artists = ['linkin park']
 
 # dictionary for artist and song
