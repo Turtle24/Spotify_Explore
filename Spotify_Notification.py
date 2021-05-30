@@ -1,18 +1,15 @@
-import datetime  # for reading present date
+import datetime  
 import time
 import requests  
 from plyer import notification  # for getting notification on your PC
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
+from settings import CID, SECRET
 import json
-# let there be no data initially
+
 spotifyData = None
 
-# Spotify Credentials and Secret
-cid = 'CLIENT_ID_GOES_HERE'
-secret = 'CLIENT_SECRET_GOES_HERE'
-
-client_credentials_manager = SpotifyClientCredentials(client_id=cid, client_secret=secret)
+client_credentials_manager = SpotifyClientCredentials(client_id=CID, client_secret=SECRET)
 sp = spotipy.Spotify(client_credentials_manager
                      =
                      client_credentials_manager)
