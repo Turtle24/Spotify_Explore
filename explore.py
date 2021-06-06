@@ -5,4 +5,4 @@ test = ClientConnection()
 
 dc = DataCapture()
 
-print(dc.topArtists('Drake'))
+print(dc.latestSong('Drake'))
