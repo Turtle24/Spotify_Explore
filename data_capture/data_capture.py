@@ -30,6 +30,14 @@ class DataCapture:
         with open("artists.csv", "w", newline='') as csvfile:
             fieldnames = ['artist_id', 'new_song', 'status']
 
+class NotificationHandler:
+    
+    check_status = False
+    # building logic
+    def notification_check(self):
+        if last != new:
+            self.check_status = False
+
     def notify(self):
         if not self.sp:
             print('No data was retrieved!')
