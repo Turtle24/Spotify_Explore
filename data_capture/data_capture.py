@@ -9,16 +9,16 @@ class DataCapture:
         self.spotifyData = None
         self.top_artists = ['Drake']
         self.latest_release = OrderedDict()
-        self.sp = ClientConnection().sp
+        self._client = ClientConnection.sp
     
     def addArtist(self, artist):
-        res = self.sp.search(q=artist, limit=1)
+        res = self._client.search(q=artist, limit=1)
         if res and not self.latest_release.get(res['tracks']['items'][0]['artists'][0]['id']):
             self.top_artists.append(artist)
         return 
 
     def latestSong(self, artist):
-        res = self.sp.search(q=artist, limit=1)
+        res = self._client.search(q=artist, limit=1)
         self.latest_release[res['tracks']['items'][0]['artists'][0]['id']] = f"{res['tracks']['items'][0]['artists'][0]['name']} - {res['tracks']['items'][0]['name']}"
         with open("artists.csv", "w", newline='') as csvfile:
             fieldnames = ['artist_id', 'new_song', 'status']
@@ -39,7 +39,7 @@ class NotificationHandler:
             self.check_status = False
 
     def notify(self):
-        if not self.sp:
+        if not self._client:
             print('No data was retrieved!')
         
         with open('artists.csv', newline='') as csvfile:
