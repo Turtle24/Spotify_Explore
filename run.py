@@ -1,4 +1,5 @@
-from data_capture.data_capture import DataCapture
+from data_capture.data_capture import DataCapture, NotificationHandler
 
 if __name__ == "__main__":
-    DataCapture().notify()
+    DataCapture().latestSong('Drake')
+    NotificationHandler().notify()
